@@ -18,13 +18,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Changed to Node.js 18 (or you can specify a higher version if needed)
+          node-version: '18'  # Use Node.js 18 or higher
 
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Build the app (Optional, only if you want to build before deployment)
+      # Step 4: Build the app (Optional)
       - name: Build the app
         run: npm run build
 
@@ -36,4 +36,4 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         run: |
           npm install -g vercel
-          vercel --prod --token $VERCEL_TOKEN --confirm $VERCEL_ORG_ID --project $VERCEL_PROJECT_ID
+          vercel --prod --token $VERCEL_TOKEN --confirm $VERCEL_ORG_ID
