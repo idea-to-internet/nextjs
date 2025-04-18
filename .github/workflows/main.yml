@@ -36,4 +36,5 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         run: |
           npm install -g vercel
+           cd nextjs
           vercel --prod --token $VERCEL_TOKEN --yes $VERCEL_ORG_ID
