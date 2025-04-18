@@ -36,4 +36,5 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         run: |
           npm install -g vercel
+          cd ./next  # Change this to your project folder if it's a subfolder
           vercel --prod --token $VERCEL_TOKEN --yes $VERCEL_ORG_ID
