@@ -3,7 +3,7 @@ name: Deploy to Vercel
 on:
   push:
     branches:
-      - main  # or the branch you want to deploy from
+      - main  # You can change this to the branch you want to deploy from
 
 jobs:
   deploy:
@@ -18,13 +18,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # You can change this to the version you use
+          node-version: '18'  # Changed to Node.js 18 (or you can specify a higher version if needed)
 
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Build the app (Optional if you want to build before deployment)
+      # Step 4: Build the app (Optional, only if you want to build before deployment)
       - name: Build the app
         run: npm run build
 
