@@ -1,19 +1,21 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@next/next/recommended",
-    "prettier"
-  ],
-  "plugins": ["react", "prettier"],
-  "rules": {
-    "prettier/prettier": ["error", { "endOfLine": "auto" }]
-  },
-  "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@next/next/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "react",
+      "@next/next",
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "react/react-in-jsx-scope": "off",  // Disable React import rule if using React 17+
+      "prettier/prettier": ["error", { "endOfLine": "auto" }]
     }
   }
-}
+  

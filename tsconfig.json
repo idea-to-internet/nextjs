@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2020", // or ESNext
+    "module": "ESNext", // Ensure ESNext module system
+    "moduleResolution": "node", // Use Node.js module resolution
+    "jsx": "preserve", // Use React 17+ JSX Transform
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // Important for Next.js JSX handling
-    "noEmit": true,
     "incremental": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "noEmit": true,
     "plugins": [
       {
         "name": "next"
@@ -20,12 +24,12 @@
     ]
   },
   "include": [
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "app/**/*",
-    "next-env.d.ts",
-    "pages/**/*",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
